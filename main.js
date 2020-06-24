@@ -1,4 +1,6 @@
-let randomNumber = Math.floor(Math.random() * 100) + 1;
+
+
+let randomNumber = Math.floor(Math.random() * 1000) + 1;
 
 const guesses = document.querySelector('.guesses');
 const lastResult = document.querySelector('.lastResult');
@@ -26,16 +28,16 @@ function checkGuess() {
    
     if (userGuess === randomNumber) {
       lastResult.textContent = 'Congratulations! You got it right!';
-      lastResult.style.backgroundColor = 'green';
+      lastResult.style.backgroundColor = 'transparent';
       lowOrHi.textContent = '';
       setGameOver();
     } else if (guessCount === 10) {
-      lastResult.textContent = '!!!GAME OVER!!!';
+      lastResult.textContent = randomNumber, '!!!GAME OVER!!!';
       setGameOver();
     } else {
       lastResult.textContent = 'Wrong!';
-      lastResult.style.backgroundColor = 'red';
-      if(userGuess < randomNumber) {
+      lastResult.style.backgroundColor = 'transparent';
+      if(userGuess < randomNumber) {    
         lowOrHi.textContent = 'Last guess was too low!';
       } else if(userGuess > randomNumber) {
         lowOrHi.textContent = 'Last guess was too high!';
@@ -78,5 +80,5 @@ function checkGuess() {
   
     lastResult.style.backgroundColor = 'white';
   
-    randomNumber = Math.floor(Math.random() * 100) + 1;
+    randomNumber = Math.floor(Math.random() * 1000) + 1;
   }
